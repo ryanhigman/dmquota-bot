@@ -1,0 +1,7 @@
+services:
+  dmquota:
+    build: .
+    container_name: dmquota
+    restart: unless-stopped          # replaces systemd: auto-restart + survive reboots
+    environment:
+      - DISCORD_BOT_TOKEN=${DISCORD_BOT_TOKEN}   # read from the .env file beside this
